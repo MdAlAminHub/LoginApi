@@ -6,7 +6,7 @@ from rest_framework_simplejwt.views import TokenRefreshView,TokenObtainPairView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('api/auth/',include('accounts.urls') ),
+    path('api/auth/',include('ecommerce.urls') ),
     path('api/token/',TokenObtainPairView.as_view(),name='token_obtain_pair'),
     path('api/token/refresh/',TokenRefreshView.as_view(),name='token_refresh'),
 ]+ static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
